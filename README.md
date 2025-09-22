@@ -37,6 +37,26 @@ This system analyzes service industry images to understand what AI vision models
 
 ## 🔧 Installation
 
+### Option A: Download ZIP (Easiest - No Git Required)
+
+1. **Download the code:**
+   - Go to https://github.com/parmisanal/ImageEntityRecognizer
+   - Click the green "Code" button
+   - Select "Download ZIP"
+   - Extract the ZIP file to your desired location
+
+2. **Open Command Prompt in the folder:**
+   - Navigate to the extracted folder in Windows Explorer
+   - Type `cmd` in the address bar and press Enter
+   - Or right-click in the folder and select "Open in Terminal"
+
+3. **Install required packages:**
+```bash
+pip install -r requirements.txt
+```
+
+### Option B: Use Git (For Developers)
+
 1. **Clone the repository:**
 ```bash
 git clone https://github.com/parmisanal/ImageEntityRecognizer.git
@@ -48,20 +68,19 @@ cd ImageEntityRecognizer
 pip install -r requirements.txt
 ```
 
-3. **CRITICAL: Set up your API keys:**
-   - Copy `.env.example` to `.env`
-   - Add your Gemini API key
-   - Add your OpenAI API key
-   - Without both keys, the system will fail
+### 📌 CRITICAL: Set up your API keys (Both Options)
 
-```bash
-# Copy the example file
-copy .env.example .env
+1. **Find the file `.env.example` in the folder**
+2. **Make a copy and rename it to `.env`**
+3. **Open `.env` in Notepad**
+4. **Replace the placeholder text with your actual API keys:**
 
-# Edit .env and add your keys:
-GEMINI_API_KEY=your_actual_gemini_key_here
-OPENAI_API_KEY=your_actual_openai_key_here
 ```
+GEMINI_API_KEY=AIza...your_actual_key_here
+OPENAI_API_KEY=sk-...your_actual_key_here
+```
+
+**⚠️ Without both API keys, the system will NOT work!**
 
 ## 📁 Project Structure
 
