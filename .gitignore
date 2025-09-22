@@ -16,13 +16,15 @@ cache_responses/
 
 # Images folder (large binary files)
 X - Media - BP New Photos (Raw)/
-*.jpg
-*.jpeg
-*.png
-*.gif
-*.bmp
-*.tiff
-*.webp
+images/*.jpg
+images/*.jpeg
+images/*.png
+images/*.gif
+images/*.bmp
+images/*.tiff
+images/*.webp
+# Keep the README.txt in images folder
+!images/README.txt
 
 # Logs
 *.log

@@ -701,15 +701,30 @@ def main():
     test_mode = '--test' in sys.argv
 
     if test_mode:
-        print("\n🧪 TEST MODE (10 images)")
+        print("\n🧪 TEST MODE (first 10 images)")
     else:
-        print("\n📸 Processing all 242 images...")
+        print("\n📸 Processing all images in 'images' folder...")
 
     # Initialize analyzer
     analyzer = ImprovedImageAnalyzer(batch_size=5, max_retries=3)
 
     # Process images
-    image_folder = "X - Media - BP New Photos (Raw)"
+    image_folder = "images"  # Place your images in this folder
+
+    # Check if images folder exists
+    from pathlib import Path
+    if not Path(image_folder).exists():
+        print(f"\n❌ ERROR: '{image_folder}' folder not found!")
+        print("Please create an 'images' folder and add your images there.")
+        return
+
+    # Check for images
+    image_files = list(Path(image_folder).glob("*.jpg")) + list(Path(image_folder).glob("*.jpeg")) + list(Path(image_folder).glob("*.png"))
+    if not image_files:
+        print(f"\n❌ ERROR: No images found in '{image_folder}' folder!")
+        print("Please add .jpg, .jpeg, or .png images to analyze.")
+        return
+
     results = analyzer.process_all_images(image_folder, test_mode=test_mode)
 
     print("\n" + "="*60)
